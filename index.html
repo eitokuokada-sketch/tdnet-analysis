@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TDnet適時開示分析 - 2025-12-01 07:51:00</title>
+    <title>TDnet適時開示分析 - 2025-12-01 08:01:41</title>
     <style>
         
         * {
@@ -255,13 +255,13 @@
         <div class="header">
             <h1>📊 TDnet適時開示分析</h1>
             <div class="update-info">
-                <span>最終更新: 2025-12-01 07:51:00</span>
+                <span>最終更新: 2025-12-01 08:01:41</span>
             </div>
         </div>
 
         <!-- 日付タブ -->
         <div class="date-tabs">
-            <button class="date-tab active" onclick="switchDate('20251128')">2025年11月28日 (前営業日)</button><button class="date-tab " onclick="switchDate('20251127')">2025年11月27日 (前々営業日)</button>
+            <button class="date-tab active" onclick="switchDate('20251201')">2025年12月01日 (最終営業日)</button><button class="date-tab " onclick="switchDate('20251128')">2025年11月28日 (前営業日)</button><button class="date-tab " onclick="switchDate('20251127')">2025年11月27日 (前々営業日)</button>
         </div>
 
         <!-- セグメント切り替えタブ -->
@@ -276,8 +276,24 @@
     <script>
         // 分析データを埋め込み
         const analysisData = {
-  "timestamp": "2025-12-01 07:51:00",
+  "timestamp": "2025-12-01 08:01:41",
   "dates": {
+    "20251201": {
+      "date": "2025年12月01日",
+      "date_str": "20251201",
+      "label": "最終営業日",
+      "total_count": 2,
+      "positive": {
+        "prime": [],
+        "standard": [],
+        "growth": []
+      },
+      "negative": {
+        "prime": [],
+        "standard": [],
+        "growth": []
+      }
+    },
     "20251128": {
       "date": "2025年11月28日",
       "date_str": "20251128",
@@ -1733,7 +1749,7 @@
   },
   "error": null
 };
-        let currentDate = '20251128';
+        let currentDate = '20251201';
         let currentSentiment = 'positive';
 
         // 初期表示
