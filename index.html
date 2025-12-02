@@ -6,7 +6,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>TDnet適時開示分析 - 2025-12-03 05:22:41</title>
+    <title>TDnet適時開示分析 - 2025-12-03 08:34:44</title>
     <style>
         
         * {
@@ -258,13 +258,13 @@
         <div class="header">
             <h1>📊 TDnet適時開示分析</h1>
             <div class="update-info">
-                <span>最終更新: 2025-12-03 05:22:41</span>
+                <span>最終更新: 2025-12-03 08:34:44</span>
             </div>
         </div>
 
         <!-- 日付タブ -->
         <div class="date-tabs">
-            <button class="date-tab active" onclick="switchDate('20251202')">2025年12月02日 (前営業日)</button><button class="date-tab " onclick="switchDate('20251201')">2025年12月01日 (前々営業日)</button>
+            <button class="date-tab active" onclick="switchDate('20251203')">2025年12月03日 (最終営業日)</button><button class="date-tab " onclick="switchDate('20251202')">2025年12月02日 (前営業日)</button><button class="date-tab " onclick="switchDate('20251201')">2025年12月01日 (前々営業日)</button>
         </div>
 
         <!-- セグメント切り替えタブ -->
@@ -279,8 +279,50 @@
     <script>
         // 分析データを埋め込み
         const analysisData = {
-  "timestamp": "2025-12-03 05:22:41",
+  "timestamp": "2025-12-03 08:34:44",
   "dates": {
+    "20251203": {
+      "date": "2025年12月03日",
+      "date_str": "20251203",
+      "label": "最終営業日",
+      "total_count": 1,
+      "positive": {
+        "prime": [
+          {
+            "time": "08:30",
+            "code": "5801",
+            "company": "古河電工",
+            "title": "投資有価証券売却益（特別利益）の計上に関するお知らせ",
+            "sentiment": "positive",
+            "reason": "ポジティブ要因: 特別利益 [合計:+7.5点] (内容確認済)",
+            "score": 7.5,
+            "positive_score": 7.5,
+            "negative_score": 0.0,
+            "has_content": true,
+            "market": "プライム",
+            "pdf_url": "https://www.release.tdnet.info/inbs/140120251202513729.pdf",
+            "titles": [
+              "投資有価証券売却益（特別利益）の計上に関するお知らせ"
+            ],
+            "reasons": [
+              "ポジティブ要因: 特別利益 [合計:+7.5点] (内容確認済)"
+            ],
+            "pdf_urls": [
+              "https://www.release.tdnet.info/inbs/140120251202513729.pdf"
+            ],
+            "content_count": 1,
+            "total_count": 1
+          }
+        ],
+        "standard": [],
+        "growth": []
+      },
+      "negative": {
+        "prime": [],
+        "standard": [],
+        "growth": []
+      }
+    },
     "20251202": {
       "date": "2025年12月02日",
       "date_str": "20251202",
@@ -1205,7 +1247,7 @@
   },
   "error": null
 };
-        let currentDate = '20251202';
+        let currentDate = '20251203';
         let currentSentiment = 'positive';
 
         // URLから状態を復元
