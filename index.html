@@ -6,7 +6,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>TDnet適時開示分析 - 2025-12-04 00:01:56</title>
+    <title>TDnet適時開示分析 - 2025-12-04 08:32:22</title>
     <style>
         
         * {
@@ -258,13 +258,13 @@
         <div class="header">
             <h1>📊 TDnet適時開示分析</h1>
             <div class="update-info">
-                <span>最終更新: 2025-12-04 00:01:56</span>
+                <span>最終更新: 2025-12-04 08:32:22</span>
             </div>
         </div>
 
         <!-- 日付タブ -->
         <div class="date-tabs">
-            <button class="date-tab active" onclick="switchDate('20251203')">2025年12月03日 (前営業日)</button><button class="date-tab " onclick="switchDate('20251202')">2025年12月02日 (前々営業日)</button>
+            <button class="date-tab active" onclick="switchDate('20251204')">2025年12月04日 (最終営業日)</button><button class="date-tab " onclick="switchDate('20251203')">2025年12月03日 (前営業日)</button><button class="date-tab " onclick="switchDate('20251202')">2025年12月02日 (前々営業日)</button>
         </div>
 
         <!-- セグメント切り替えタブ -->
@@ -279,8 +279,53 @@
     <script>
         // 分析データを埋め込み
         const analysisData = {
-  "timestamp": "2025-12-04 00:01:56",
+  "timestamp": "2025-12-04 08:32:22",
   "dates": {
+    "20251204": {
+      "date": "2025年12月04日",
+      "date_str": "20251204",
+      "label": "最終営業日",
+      "total_count": 2,
+      "positive": {
+        "prime": [],
+        "standard": [
+          {
+            "time": "08:30",
+            "code": "3823",
+            "company": "ＷＨＹ　ＨＯＷ　ＤＯ",
+            "title": "ビットコインを活用した株主優待制度の導入に関するお知らせ",
+            "sentiment": "positive",
+            "reason": "ポジティブ要因: 株主優待 [合計:+42.0点] (内容確認済)",
+            "score": 42.0,
+            "positive_score": 42.0,
+            "negative_score": 0.0,
+            "has_content": true,
+            "market": "スタンダード",
+            "pdf_url": "https://www.release.tdnet.info/inbs/140120251203513951.pdf",
+            "titles": [
+              "ビットコインを活用した株主優待制度の導入に関するお知らせ"
+            ],
+            "reasons": [
+              "ポジティブ要因: 株主優待 [合計:+42.0点] (内容確認済)"
+            ],
+            "pdf_urls": [
+              "https://www.release.tdnet.info/inbs/140120251203513951.pdf"
+            ],
+            "ai_evaluations": [
+              "[様子見]THE WHY HOW DO COMPANY株式会社がビットコインを活用した株主優待制度を導入。株主の利便性向上と中長期保有促進を目的とするが、抽選制であり、贈呈額の総額は15.4百万円と限定的。ビットコイン価格の変動リスクや口座開設の審査・制約もあり、株価への直接的かつ即効性のある影響は限定的と判断。"
+            ],
+            "content_count": 1,
+            "total_count": 1
+          }
+        ],
+        "growth": []
+      },
+      "negative": {
+        "prime": [],
+        "standard": [],
+        "growth": []
+      }
+    },
     "20251203": {
       "date": "2025年12月03日",
       "date_str": "20251203",
@@ -1110,7 +1155,7 @@
   },
   "error": null
 };
-        let currentDate = '20251203';
+        let currentDate = '20251204';
         let currentSentiment = 'positive';
 
         // URLから状態を復元
