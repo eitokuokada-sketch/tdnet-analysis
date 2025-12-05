@@ -6,7 +6,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>TDnet適時開示分析 - 2025-12-05 17:12:12</title>
+    <title>TDnet適時開示分析 - 2025-12-05 17:23:55</title>
     <style>
         
         * {
@@ -258,7 +258,7 @@
         <div class="header">
             <h1>📊 TDnet適時開示分析</h1>
             <div class="update-info">
-                <span>最終更新: 2025-12-05 17:12:12</span>
+                <span>最終更新: 2025-12-05 17:23:55</span>
             </div>
         </div>
 
@@ -279,7 +279,7 @@
     <script>
         // 分析データを埋め込み
         const analysisData = {
-  "timestamp": "2025-12-05 17:12:12",
+  "timestamp": "2025-12-05 17:23:55",
   "dates": {
     "20251205": {
       "date": "2025年12月05日",
@@ -2696,10 +2696,15 @@
                         const reason = item.reasons && item.reasons[idx] ? item.reasons[idx] : '';
                         const aiEvaluation = item.ai_evaluations && item.ai_evaluations[idx] ? item.ai_evaluations[idx] : '';
                         
+                        // 内容確認済バッジ：AIコメントがある場合のみ表示
                         let contentBadge = '';
-                        if (item.has_content && reason) {
-                            if (item.content_count && item.total_count && item.total_count > 1) {
-                                contentBadge = `<span style="background:${badgeColor};color:white;padding:2px 6px;border-radius:3px;font-size:10px;margin-left:5px;">内容確認済 ${idx + 1}/${item.total_count}</span>`;
+                        if (aiEvaluation) {
+                            // 内容確認済の件数をカウント
+                            const confirmedCount = (item.ai_evaluations || []).filter(ai => ai).length;
+                            const currentIndex = (item.ai_evaluations || []).slice(0, idx + 1).filter(ai => ai).length;
+                            
+                            if (confirmedCount > 1) {
+                                contentBadge = `<span style="background:${badgeColor};color:white;padding:2px 6px;border-radius:3px;font-size:10px;margin-left:5px;">内容確認済 ${currentIndex}/${confirmedCount}</span>`;
                             } else {
                                 contentBadge = `<span style="background:${badgeColor};color:white;padding:2px 6px;border-radius:3px;font-size:10px;margin-left:5px;">内容確認済</span>`;
                             }
