@@ -6,7 +6,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>TDnet適時開示分析 - 2025-12-11 00:04:19</title>
+    <title>TDnet適時開示分析 - 2025-12-11 08:34:38</title>
     <style>
         
         * {
@@ -258,13 +258,13 @@
         <div class="header">
             <h1>📊 TDnet適時開示分析</h1>
             <div class="update-info">
-                <span>最終更新: 2025-12-11 00:04:19</span>
+                <span>最終更新: 2025-12-11 08:34:38</span>
             </div>
         </div>
 
         <!-- 日付タブ -->
         <div class="date-tabs">
-            <button class="date-tab active" onclick="switchDate('20251210')">2025年12月10日 (前営業日)</button><button class="date-tab " onclick="switchDate('20251209')">2025年12月09日 (前々営業日)</button>
+            <button class="date-tab active" onclick="switchDate('20251211')">2025年12月11日 (最終営業日)</button><button class="date-tab " onclick="switchDate('20251210')">2025年12月10日 (前営業日)</button><button class="date-tab " onclick="switchDate('20251209')">2025年12月09日 (前々営業日)</button>
         </div>
 
         <!-- セグメント切り替えタブ -->
@@ -279,8 +279,53 @@
     <script>
         // 分析データを埋め込み
         const analysisData = {
-  "timestamp": "2025-12-11 00:04:19",
+  "timestamp": "2025-12-11 08:34:38",
   "dates": {
+    "20251211": {
+      "date": "2025年12月11日",
+      "date_str": "20251211",
+      "label": "最終営業日",
+      "total_count": 1,
+      "positive": {
+        "prime": [],
+        "standard": [],
+        "growth": []
+      },
+      "negative": {
+        "prime": [
+          {
+            "time": "08:30",
+            "code": "4565",
+            "company": "ネクセラファーマ",
+            "title": "既存の2028年満期ユーロ円建転換社債型新株予約権付社債に関する条件変更の承認と一部買付けのお知らせ",
+            "sentiment": "negative",
+            "reason": "ネガティブ要因: 新株式発行など [合計:-3.0点]",
+            "score": -3.0,
+            "positive_score": 0.0,
+            "negative_score": 3.0,
+            "has_content": false,
+            "market": "プライム",
+            "pdf_url": "https://www.release.tdnet.info/inbs/140120251210517176.pdf",
+            "titles": [
+              "既存の2028年満期ユーロ円建転換社債型新株予約権付社債に関する条件変更の承認と一部買付けのお知らせ"
+            ],
+            "reasons": [
+              "ネガティブ要因: 新株式発行など [合計:-3.0点]"
+            ],
+            "pdf_urls": [
+              "https://www.release.tdnet.info/inbs/140120251210517176.pdf"
+            ],
+            "ai_evaluations": [
+              ""
+            ],
+            "content_count": 0,
+            "total_count": 1
+          }
+        ],
+        "standard": [],
+        "growth": []
+      }
+    },
     "20251210": {
       "date": "2025年12月10日",
       "date_str": "20251210",
@@ -2500,7 +2545,7 @@
   },
   "error": null
 };
-        let currentDate = '20251210';
+        let currentDate = '20251211';
         let currentSentiment = 'positive';
 
         // URLから状態を復元
