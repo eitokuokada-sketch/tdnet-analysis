@@ -6,7 +6,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>TDnet適時開示分析 - 2025-12-10 00:00:03</title>
+    <title>TDnet適時開示分析 - 2025-12-10 09:00:24</title>
     <style>
         
         * {
@@ -258,13 +258,13 @@
         <div class="header">
             <h1>📊 TDnet適時開示分析</h1>
             <div class="update-info">
-                <span>最終更新: 2025-12-10 00:00:03</span>
+                <span>最終更新: 2025-12-10 09:00:24</span>
             </div>
         </div>
 
         <!-- 日付タブ -->
         <div class="date-tabs">
-            <button class="date-tab active" onclick="switchDate('20251209')">2025年12月09日 (前営業日)</button><button class="date-tab " onclick="switchDate('20251208')">2025年12月08日 (前々営業日)</button>
+            <button class="date-tab active" onclick="switchDate('20251210')">2025年12月10日 (最終営業日)</button><button class="date-tab " onclick="switchDate('20251209')">2025年12月09日 (前営業日)</button><button class="date-tab " onclick="switchDate('20251208')">2025年12月08日 (前々営業日)</button>
         </div>
 
         <!-- セグメント切り替えタブ -->
@@ -279,8 +279,24 @@
     <script>
         // 分析データを埋め込み
         const analysisData = {
-  "timestamp": "2025-12-10 00:00:03",
+  "timestamp": "2025-12-10 09:00:24",
   "dates": {
+    "20251210": {
+      "date": "2025年12月10日",
+      "date_str": "20251210",
+      "label": "最終営業日",
+      "total_count": 5,
+      "positive": {
+        "prime": [],
+        "standard": [],
+        "growth": []
+      },
+      "negative": {
+        "prime": [],
+        "standard": [],
+        "growth": []
+      }
+    },
     "20251209": {
       "date": "2025年12月09日",
       "date_str": "20251209",
@@ -2218,7 +2234,7 @@
   },
   "error": null
 };
-        let currentDate = '20251209';
+        let currentDate = '20251210';
         let currentSentiment = 'positive';
 
         // URLから状態を復元
