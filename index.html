@@ -210,8 +210,9 @@
         }
 
         .disclosure-header {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
             align-items: center;
             margin-bottom: 10px;
         }
@@ -220,6 +221,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            min-width: 0;
         }
 
         .stock-code {
@@ -232,6 +234,7 @@
             text-decoration: none;
             display: inline-block;
             transition: background 0.2s;
+            flex-shrink: 0;
         }
 
         .stock-code:hover {
@@ -243,11 +246,19 @@
             font-weight: bold;
             font-size: 16px;
             color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+            min-width: 0;
         }
 
         .time {
             color: #666;
             font-size: 14px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-left: 10px;
         }
 
         .title {
@@ -379,7 +390,7 @@
         <div class="header">
             <h1>📊 TDnet適時開示分析</h1>
             <div class="update-info">
-                <p>最終更新: 2025/12/12 10:26:47</p>
+                <p>最終更新: 2025/12/12 10:29:36</p>
             </div>
         </div>
 
