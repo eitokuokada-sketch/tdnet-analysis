@@ -45,19 +45,53 @@
         }
 
         /* タブスタイル */
-        .date-tabs, .sentiment-tabs {
+        .controls-container {
             background: white;
             padding: 15px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             margin-bottom: 20px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+        }
+        
+        .controls-container > * {
+            margin-bottom: 10px;
+        }
+        
+        .controls-container > *:last-child {
+            margin-bottom: 0;
         }
 
-        .date-tab, .sentiment-tab {
-            padding: 10px 20px;
+        .date-select {
+            padding: 10px 15px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            display: block;
+            width: auto;
+            min-width: 200px;
+        }
+
+        .date-select:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+
+        .market-tabs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .sentiment-tabs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .sentiment-tab {
+            padding: 8px 16px;
             border: none;
             border-radius: 8px;
             font-size: 14px;
@@ -68,15 +102,9 @@
             transition: all 0.3s ease;
         }
 
-        .date-tab:hover, .sentiment-tab:hover {
+        .sentiment-tab:hover, .tab-button:hover {
             background: #e0e0e0;
             transform: translateY(-2px);
-        }
-
-        .date-tab.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
 
         .sentiment-tab.active {
@@ -93,7 +121,7 @@
         }
 
         .tab-button {
-            padding: 10px 20px;
+            padding: 8px 16px;
             border: none;
             border-radius: 8px;
             font-size: 14px;
@@ -318,16 +346,14 @@
                 margin-top: 10px;
             }
 
-            .date-tabs, .sentiment-tabs {
-                padding: 10px;
-                gap: 8px;
-            }
-
-            .date-tab, .sentiment-tab {
+            .sentiment-tab {
                 padding: 8px 16px;
                 font-size: 14px;
-                flex: 1 1 auto;
-                min-width: calc(50% - 4px);
+            }
+            
+            .tab-button {
+                padding: 8px 16px;
+                font-size: 14px;
             }
 
             .section {
@@ -390,38 +416,28 @@
         <div class="header">
             <h1>📊 TDnet適時開示分析</h1>
             <div class="update-info">
-                <p>最終更新: 2025/12/13 07:03:37</p>
+                <p>最終更新: 2025/12/13 07:04:18</p>
             </div>
         </div>
 
-        <!-- 日付切り替えタブ -->
-        <div class="date-tabs">
-            <button class="date-tab active" data-date="20251212">最終営業日 2025年12月12日</button>
-            <button class="date-tab " data-date="20251211">前営業日 2025年12月11日</button>
-            <button class="date-tab " data-date="20251210">前々営業日 2025年12月10日</button>
-        </div>
-
-        <!-- センチメント切り替えタブ -->
-        <div class="sentiment-tabs">
-            <button class="sentiment-tab active" data-sentiment="positive">
-                ポジティブ開示
-            </button>
-            <button class="sentiment-tab" data-sentiment="negative">
-                ネガティブ開示
-            </button>
-        </div>
-
-        <!-- 市場区分タブ -->
-        <div class="date-tabs">
-            <button class="tab-button active" data-market="prime">
-                プライム
-            </button>
-            <button class="tab-button" data-market="standard">
-                スタンダード
-            </button>
-            <button class="tab-button" data-market="growth">
-                グロース
-            </button>
+        <!-- コントロール（日付・市場区分・売買） -->
+        <div class="controls-container">
+            <select class="date-select" id="dateSelect">
+                <option value="20251212" selected>最終営業日 2025年12月12日</option>
+                <option value="20251211" >前営業日 2025年12月11日</option>
+                <option value="20251210" >前々営業日 2025年12月10日</option>
+            </select>
+            
+            <div class="market-tabs">
+                <button class="tab-button active" data-market="prime">PRM</button>
+                <button class="tab-button" data-market="standard">STD</button>
+                <button class="tab-button" data-market="growth">GRW</button>
+            </div>
+            
+            <div class="sentiment-tabs">
+                <button class="sentiment-tab active" data-sentiment="positive">買い</button>
+                <button class="sentiment-tab" data-sentiment="negative">売り</button>
+            </div>
         </div>
 
         <!-- 開示情報コンテナ -->
@@ -7030,8 +7046,16 @@
                     // 内容確認済の総数をカウント
                     const confirmedCount = (item.ai_evaluations || []).filter(ai => ai && ai.trim()).length;
                     
-                    // 各IR項目のHTML生成
+                    // 各IR項目のHTML生成（中立的な開示は除外）
+                    const validIndices = [];
                     const irItemsHtml = item.titles.map((title, idx) => {
+                        const reason = item.reasons && item.reasons[idx] ? item.reasons[idx] : '';
+                        // 中立的な開示のIR自体をスキップ
+                        if (reason === '中立的な開示') {
+                            return '';
+                        }
+                        validIndices.push(idx);
+                        return ((title, idx) => {
                         const pdfUrl = item.pdf_urls && item.pdf_urls[idx] ? item.pdf_urls[idx] : '';
                         const reason = item.reasons && item.reasons[idx] ? item.reasons[idx] : '';
                         const aiEvaluation = item.ai_evaluations && item.ai_evaluations[idx] ? item.ai_evaluations[idx] : '';
@@ -7052,7 +7076,7 @@
                             ? `<div class="title"><a href="${pdfUrl}" target="_blank" style="color:inherit;text-decoration:none;">${title}</a>${contentBadge}</div>`
                             : `<div class="title">${title}${contentBadge}</div>`;
                         
-                        let reasonHtml = reason ? `<div class="reason">${reason}</div>` : '';
+                        let reasonHtml = (reason && reason !== '中立的な開示') ? `<div class="reason">${reason}</div>` : '';
                         let aiHtml = (aiEvaluation && aiEvaluation.trim()) ? `<div class="reason">🧠AIコメント：${aiEvaluation}</div>` : '';
                         
                         return `
@@ -7062,7 +7086,8 @@
                             ${aiHtml}
                         </div>
                         `;
-                    }).join('');
+                        })(title, idx);
+                    }).filter(html => html).join('');
                     
                     return `
                     <div class="disclosure-item">
@@ -7089,7 +7114,7 @@
                         ? `<div class="title"><a href="${pdfUrl}" target="_blank" style="color:inherit;text-decoration:none;">${item.title}</a>${contentBadge}</div>`
                         : `<div class="title">${item.title}${contentBadge}</div>`;
                     
-                    let reasonHtml = item.reason ? `<div class="reason">${item.reason}</div>` : '';
+                    let reasonHtml = (item.reason && item.reason !== '中立的な開示') ? `<div class="reason">${item.reason}</div>` : '';
                     // AIコメントは内容がある場合のみ表示（空文字列や空白のみを除外）
                     let aiHtml = (item.ai_evaluation && item.ai_evaluation.trim()) ? `<div class="reason">🧠AIコメント：${item.ai_evaluation}</div>` : '';
                     
@@ -7112,15 +7137,12 @@
         }
     
 
-        // 日付タブの切り替え
-        document.querySelectorAll('.date-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.date-tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                currentDate = tab.dataset.date;
-                localStorage.setItem('tdnet_currentDate', currentDate);
-                updateDisplay();
-            });
+        // 日付選択の切り替え
+        const dateSelect = document.getElementById('dateSelect');
+        dateSelect.addEventListener('change', () => {
+            currentDate = dateSelect.value;
+            localStorage.setItem('tdnet_currentDate', currentDate);
+            updateDisplay();
         });
 
         // センチメントタブの切り替え
@@ -7152,7 +7174,10 @@
 
         function updateDisplay() {
             const dateData = analysisData[currentDate] || {};
-            const marketData = dateData[currentMarket] || [];
+            let marketData = dateData[currentMarket] || [];
+            
+            // 中立的な開示を除外
+            marketData = marketData.filter(item => item.sentiment !== 'neutral');
             
             // センチメント別にフィルタ
             const filteredData = marketData.filter(item => item.sentiment === currentSentiment);
@@ -7166,8 +7191,7 @@
                 const sectionClass = currentSentiment;
                 const sectionIcon = currentSentiment === 'positive' ? '📈' : '📉';
                 const sentimentLabel = currentSentiment === 'positive' ? 'ポジティブ' : 'ネガティブ';
-                const marketLabel = currentMarket === 'prime' ? 'プライム' : currentMarket === 'standard' ? 'スタンダード' : 'グロース';
-                const sectionTitle = `${marketLabel} - ${sentimentLabel}開示`;
+                const sectionTitle = `${sentimentLabel}開示`;
                 
                 container.innerHTML = `
                     <div class="section ${sectionClass}">
@@ -7183,13 +7207,9 @@
 
         // ページ読み込み時に保存された状態を復元
         function restoreState() {
-            // 日付タブの復元
-            document.querySelectorAll('.date-tab').forEach(t => {
-                t.classList.remove('active');
-                if (t.dataset.date === currentDate) {
-                    t.classList.add('active');
-                }
-            });
+            // 日付選択の復元
+            const dateSelect = document.getElementById('dateSelect');
+            dateSelect.value = currentDate;
             
             // センチメントタブの復元
             document.querySelectorAll('.sentiment-tab').forEach(t => {
