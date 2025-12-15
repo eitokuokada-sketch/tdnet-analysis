@@ -151,6 +151,38 @@
             display: block;
         }
 
+        /* プルトゥリフレッシュ */
+        .pull-to-refresh {
+            position: fixed;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: top 0.3s ease;
+            z-index: 1000;
+        }
+
+        .pull-to-refresh.visible {
+            top: 20px;
+        }
+
+        .pull-to-refresh.loading {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: translateX(-50%) rotate(0deg); }
+            to { transform: translateX(-50%) rotate(360deg); }
+        }
+
         .empty-state {
             text-align: center;
             padding: 40px;
@@ -412,11 +444,14 @@
     </style>
 </head>
 <body>
+    <!-- プルトゥリフレッシュインジケータ -->
+    <div class="pull-to-refresh" id="pullRefreshIndicator">🔄</div>
+
     <div class="container">
         <div class="header">
             <h1>📊 TDnet適時開示分析</h1>
             <div class="update-info">
-                <p>最終更新: 2025/12/15 19:32:36</p>
+                <p>最終更新: 2025/12/15 20:19:27</p>
             </div>
         </div>
 
@@ -431,7 +466,7 @@
             <div class="market-tabs">
                 <button class="tab-button active" data-market="prime">PRM</button>
                 <button class="tab-button" data-market="standard">STD</button>
-                <button class="tab-button" data-market="growth">GRW</button>
+                <button class="tab-button" data-market="growth">GRT</button>
             </div>
             
             <div class="sentiment-tabs">
@@ -9621,6 +9656,56 @@
         // 初期表示
         restoreState();
         updateDisplay();
+
+        // プルトゥリフレッシュ機能
+        let startY = 0;
+        let currentY = 0;
+        let isPulling = false;
+        const pullThreshold = 80;
+        const pullIndicator = document.getElementById('pullRefreshIndicator');
+
+        document.addEventListener('touchstart', (e) => {
+            // ページ最上部にいる場合のみプルトゥリフレッシュを有効化
+            if (window.scrollY === 0) {
+                startY = e.touches[0].pageY;
+                isPulling = true;
+            }
+        }, { passive: true });
+
+        document.addEventListener('touchmove', (e) => {
+            if (!isPulling) return;
+
+            currentY = e.touches[0].pageY;
+            const pullDistance = currentY - startY;
+
+            if (pullDistance > 0 && pullDistance < pullThreshold * 2) {
+                // インジケータを表示
+                if (pullDistance > 20) {
+                    pullIndicator.classList.add('visible');
+                }
+            }
+        }, { passive: true });
+
+        document.addEventListener('touchend', (e) => {
+            if (!isPulling) return;
+
+            const pullDistance = currentY - startY;
+
+            if (pullDistance > pullThreshold) {
+                // リフレッシュ実行
+                pullIndicator.classList.add('loading');
+                
+                // ページをリロード
+                setTimeout(() => {
+                    window.location.reload();
+                }, 300);
+            } else {
+                // インジケータを非表示
+                pullIndicator.classList.remove('visible');
+            }
+
+            isPulling = false;
+        });
     </script>
 </body>
 </html>
