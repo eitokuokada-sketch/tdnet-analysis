@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2025/12/19 00:01:36</p>
+                <p>最終更新: 2025/12/19 08:02:20</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20251218" selected>前営業日 2025年12月18日</option>
+                <option value="20251219" selected>最終営業日 2025年12月19日</option>
+                <option value="20251218" >前営業日 2025年12月18日</option>
                 <option value="20251217" >前々営業日 2025年12月17日</option>
             </select>
             
@@ -484,6 +485,13 @@
 
     <script>
         const analysisData = {
+  "20251219": {
+    "date": "2025年12月19日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [],
+    "growth": []
+  },
   "20251218": {
     "date": "2025年12月18日",
     "label": "前営業日",
@@ -3426,7 +3434,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20251218';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20251219';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
