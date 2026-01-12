@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/01/13 00:04:47</p>
+                <p>最終更新: 2026/01/13 08:33:53</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260109" selected>前営業日 2026年01月09日</option>
+                <option value="20260113" selected>最終営業日 2026年01月13日</option>
+                <option value="20260109" >前営業日 2026年01月09日</option>
                 <option value="20260108" >前々営業日 2026年01月08日</option>
             </select>
             
@@ -484,6 +485,31 @@
 
     <script>
         const analysisData = {
+  "20260113": {
+    "date": "2026年01月13日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [],
+    "growth": [
+      {
+        "time": "08:30",
+        "code": "7036",
+        "company": "Ｇ－イーエムネットＪ",
+        "sentiment": "negative",
+        "score": -3.0,
+        "positive_score": 0.0,
+        "negative_score": 3.0,
+        "has_content": false,
+        "market": "グロース",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "常務取締役CFOによる不正行為の判明、開示書類等に係る不適切な会計処理の可能性及び第三者委員会の設置に関するお知らせ",
+        "reason": "ネガティブ要因: 不正など [合計:-3.0点]",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260113532046.pdf",
+        "ai_evaluation": ""
+      }
+    ]
+  },
   "20260109": {
     "date": "2026年01月09日",
     "label": "前営業日",
@@ -4617,7 +4643,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260109';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260113';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
