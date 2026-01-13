@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/01/14 00:03:30</p>
+                <p>最終更新: 2026/01/14 08:34:29</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260113" selected>前営業日 2026年01月13日</option>
+                <option value="20260114" selected>最終営業日 2026年01月14日</option>
+                <option value="20260113" >前営業日 2026年01月13日</option>
                 <option value="20260109" >前々営業日 2026年01月09日</option>
             </select>
             
@@ -484,6 +485,127 @@
 
     <script>
         const analysisData = {
+  "20260114": {
+    "date": "2026年01月14日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [],
+    "growth": [
+      {
+        "time": "08:30",
+        "code": "7370",
+        "company": "Ｇ－Ｅｎｊｉｎ",
+        "sentiment": "negative",
+        "score": -28.5,
+        "positive_score": 0.0,
+        "negative_score": 15.0,
+        "has_content": true,
+        "market": "グロース",
+        "titles": [
+          "2026年５月期 第２四半期（中間期）決算短信〔日本基準〕(連結)",
+          "業績予想の修正に関するお知らせ",
+          "新株予約権の消却に関するお知らせ",
+          "新株予約権（有償ストック・オプション）の消却に関するお知らせ"
+        ],
+        "reasons": [
+          "",
+          "",
+          "ネガティブ要因: 新株式発行など [合計:-3.0点]",
+          "ネガティブ要因: 新株式発行など [合計:-3.0点]"
+        ],
+        "pdf_urls": [
+          "https://www.release.tdnet.info/inbs/140120260113533060.pdf",
+          "https://www.release.tdnet.info/inbs/140120260113533040.pdf",
+          "https://www.release.tdnet.info/inbs/140120260113533048.pdf",
+          "https://www.release.tdnet.info/inbs/140120260113533045.pdf"
+        ],
+        "ai_evaluations": [
+          "[売り] 2026年5月期第2四半期連結業績は、売上高、営業利益、経常利益、親会社株主に帰属する中間純利益の全てにおいて前年同期比で大幅な減少（それぞれ-19.7%、-58.1%、-52.4%、-54.7%）となった。特に、PRコンサルティングサービス、メディアプラットフォームサービスともに売上高が減少し、通期業績予想も下方修正された。これは株価にとってネガティブな要因である。",
+          "[強く売り] 株式会社Ｅｎｊｉｎは、2026年5月期の業績予想を大幅に下方修正した。売上高は前回予想比26.4%減、営業利益は同56.6%減と、利益面での落ち込みが特に大きい。人員減少による売上回収の遅れ、PRコンサルティング事業の売上計上時期ずれ込み、PRプラットフォーム事業におけるサービス改善期間の影響などが主な理由として挙げられている。これらの要因は事業の成長性や収益力にネガティブな影響を与える可能性が高く、株価への悪影響が懸念される。",
+          "",
+          ""
+        ],
+        "content_count": 2,
+        "total_count": 4,
+        "title": "2026年５月期 第２四半期（中間期）決算短信〔日本基準〕(連結)",
+        "reason": ""
+      },
+      {
+        "time": "08:30",
+        "code": "7370",
+        "company": "Ｇ－Ｅｎｊｉｎ",
+        "sentiment": "positive",
+        "score": 23.75,
+        "positive_score": 18.75,
+        "negative_score": 0.0,
+        "has_content": true,
+        "market": "グロース",
+        "titles": [
+          "剰余金の配当（中間配当）に関するお知らせ",
+          "自己株式取得に係る事項の決定に関するお知らせ"
+        ],
+        "reasons": [
+          "",
+          "ポジティブ要因: 自己株式取得など, 子会社化など [合計:+5.0点]"
+        ],
+        "pdf_urls": [
+          "https://www.release.tdnet.info/inbs/140120260113533044.pdf",
+          "https://www.release.tdnet.info/inbs/140120260113533043.pdf"
+        ],
+        "ai_evaluations": [
+          "[買い] 株式会社Ｅｎｊｉｎは、2025年11月30日を基準日とする中間配当を1株あたり20円と発表しました。これは前期実績の13円から大幅な増配であり、配当予想も上方修正されています。総還元性向30%という方針に基づいた株主還元の強化は、投資家にとってポジティブな材料であり、株価の上昇要因となる可能性があります。",
+          ""
+        ],
+        "content_count": 1,
+        "total_count": 2,
+        "title": "剰余金の配当（中間配当）に関するお知らせ",
+        "reason": ""
+      },
+      {
+        "time": "08:30",
+        "code": "7370",
+        "company": "Ｇ－Ｅｎｊｉｎ",
+        "sentiment": "neutral",
+        "score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "has_content": false,
+        "market": "グロース",
+        "titles": [
+          "代表取締役の辞任および人事異動に関するお知らせ",
+          "子会社(AI Accelerator)設立に関するお知らせ",
+          "子会社（Enjin Payment Service）設立に関するお知らせ",
+          "株式会社クロスロードの株式取得（子会社化）および第三者割当増資引受に関するお知らせ",
+          "株式会社田辺観光バスの株式取得（子会社化）および第三者割当増資引受に関するお知らせ"
+        ],
+        "reasons": [
+          "中立的な開示",
+          "中立的な開示",
+          "中立的な開示",
+          "中立的な開示 [+3.0/-3.0点]",
+          "中立的な開示 [+3.0/-3.0点]"
+        ],
+        "pdf_urls": [
+          "https://www.release.tdnet.info/inbs/140120260113533049.pdf",
+          "https://www.release.tdnet.info/inbs/140120260113533038.pdf",
+          "https://www.release.tdnet.info/inbs/140120260113533039.pdf",
+          "https://www.release.tdnet.info/inbs/140120260113533033.pdf",
+          "https://www.release.tdnet.info/inbs/140120260113533035.pdf"
+        ],
+        "ai_evaluations": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "content_count": 0,
+        "total_count": 5,
+        "title": "代表取締役の辞任および人事異動に関するお知らせ",
+        "reason": "中立的な開示"
+      }
+    ]
+  },
   "20260113": {
     "date": "2026年01月13日",
     "label": "前営業日",
@@ -6088,7 +6210,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260113';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260114';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
