@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/01/15 00:03:59</p>
+                <p>最終更新: 2026/01/15 08:30:14</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260114" selected>前営業日 2026年01月14日</option>
+                <option value="20260115" selected>最終営業日 2026年01月15日</option>
+                <option value="20260114" >前営業日 2026年01月14日</option>
                 <option value="20260113" >前々営業日 2026年01月13日</option>
             </select>
             
@@ -484,6 +485,31 @@
 
     <script>
         const analysisData = {
+  "20260115": {
+    "date": "2026年01月15日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [],
+    "growth": [
+      {
+        "time": "08:30",
+        "code": "7138",
+        "company": "Ｇ－ＴＯＲＩＣＯ",
+        "sentiment": "neutral",
+        "score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "has_content": false,
+        "market": "グロース",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "主要株主の異動に関するお知らせ",
+        "reason": "中立的な開示",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260114533991.pdf",
+        "ai_evaluation": ""
+      }
+    ]
+  },
   "20260114": {
     "date": "2026年01月14日",
     "label": "前営業日",
@@ -9705,7 +9731,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260114';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260115';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
