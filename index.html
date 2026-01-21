@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/01/22 00:00:35</p>
+                <p>最終更新: 2026/01/22 08:31:22</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260121" selected>前営業日 2026年01月21日</option>
+                <option value="20260122" selected>最終営業日 2026年01月22日</option>
+                <option value="20260121" >前営業日 2026年01月21日</option>
                 <option value="20260120" >前々営業日 2026年01月20日</option>
             </select>
             
@@ -484,6 +485,31 @@
 
     <script>
         const analysisData = {
+  "20260122": {
+    "date": "2026年01月22日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [
+      {
+        "time": "08:30",
+        "code": "4464",
+        "company": "ソフト９９",
+        "sentiment": "neutral",
+        "score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "has_content": false,
+        "market": "スタンダード",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "ECM マスター ファンド SPV ３による当社株式に対する公開買付けの開始に関するお知らせ",
+        "reason": "中立的な開示",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260122536810.pdf",
+        "ai_evaluation": ""
+      }
+    ],
+    "growth": []
+  },
   "20260121": {
     "date": "2026年01月21日",
     "label": "前営業日",
@@ -2374,7 +2400,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260121';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260122';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
