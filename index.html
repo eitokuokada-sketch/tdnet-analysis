@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/01/30 00:04:34</p>
+                <p>最終更新: 2026/01/30 08:05:10</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260129" selected>前営業日 2026年01月29日</option>
+                <option value="20260130" selected>最終営業日 2026年01月30日</option>
+                <option value="20260129" >前営業日 2026年01月29日</option>
                 <option value="20260128" >前々営業日 2026年01月28日</option>
             </select>
             
@@ -484,6 +485,31 @@
 
     <script>
         const analysisData = {
+  "20260130": {
+    "date": "2026年01月30日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [],
+    "growth": [
+      {
+        "time": "08:00",
+        "code": "3913",
+        "company": "ＧｒｅｅｎＢｅｅ",
+        "sentiment": "neutral",
+        "score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "has_content": false,
+        "market": "グロース",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "東京証券取引所スタンダード市場への市場区分変更に関するお知らせ",
+        "reason": "中立的な開示",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260122537260.pdf",
+        "ai_evaluation": ""
+      }
+    ]
+  },
   "20260129": {
     "date": "2026年01月29日",
     "label": "前営業日",
@@ -7498,7 +7524,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260129';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260130';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
