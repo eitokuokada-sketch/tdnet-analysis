@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/02/03 00:00:41</p>
+                <p>最終更新: 2026/02/03 08:28:15</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260202" selected>前営業日 2026年02月02日</option>
+                <option value="20260203" selected>最終営業日 2026年02月03日</option>
+                <option value="20260202" >前営業日 2026年02月02日</option>
                 <option value="20260130" >前々営業日 2026年01月30日</option>
             </select>
             
@@ -484,6 +485,31 @@
 
     <script>
         const analysisData = {
+  "20260203": {
+    "date": "2026年02月03日",
+    "label": "最終営業日",
+    "prime": [
+      {
+        "time": "08:25",
+        "code": "2540",
+        "company": "養命酒",
+        "sentiment": "neutral",
+        "score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "has_content": false,
+        "market": "プライム",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "一部報道について",
+        "reason": "中立的な開示",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260202545346.pdf",
+        "ai_evaluation": ""
+      }
+    ],
+    "standard": [],
+    "growth": []
+  },
   "20260202": {
     "date": "2026年02月02日",
     "label": "前営業日",
@@ -12908,7 +12934,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260202';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260203';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
