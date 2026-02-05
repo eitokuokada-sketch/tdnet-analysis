@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/02/06 00:01:29</p>
+                <p>最終更新: 2026/02/06 07:43:23</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260205" selected>前営業日 2026年02月05日</option>
+                <option value="20260206" selected>最終営業日 2026年02月06日</option>
+                <option value="20260205" >前営業日 2026年02月05日</option>
                 <option value="20260204" >前々営業日 2026年02月04日</option>
             </select>
             
@@ -484,6 +485,31 @@
 
     <script>
         const analysisData = {
+  "20260206": {
+    "date": "2026年02月06日",
+    "label": "最終営業日",
+    "prime": [
+      {
+        "time": "07:40",
+        "code": "2503",
+        "company": "キリンＨＤ",
+        "sentiment": "positive",
+        "score": 1.5,
+        "positive_score": 1.5,
+        "negative_score": 0.0,
+        "has_content": false,
+        "market": "プライム",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "Four Roses社の持分譲渡契約の締結について",
+        "reason": "ポジティブ要因: 資本業務提携など [合計:+1.5点]",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260205548446.pdf",
+        "ai_evaluation": ""
+      }
+    ],
+    "standard": [],
+    "growth": []
+  },
   "20260205": {
     "date": "2026年02月05日",
     "label": "前営業日",
@@ -8408,7 +8434,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260205';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260206';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
