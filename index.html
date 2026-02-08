@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/02/09 00:04:19</p>
+                <p>最終更新: 2026/02/09 08:01:37</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260206" selected>前営業日 2026年02月06日</option>
+                <option value="20260209" selected>最終営業日 2026年02月09日</option>
+                <option value="20260206" >前営業日 2026年02月06日</option>
                 <option value="20260205" >前々営業日 2026年02月05日</option>
             </select>
             
@@ -484,6 +485,49 @@
 
     <script>
         const analysisData = {
+  "20260209": {
+    "date": "2026年02月09日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [],
+    "growth": [
+      {
+        "time": "08:00",
+        "code": "3556",
+        "company": "Ｇ－リネットジャパン",
+        "sentiment": "positive",
+        "score": 105.75,
+        "positive_score": 8.25,
+        "negative_score": 5.25,
+        "has_content": true,
+        "market": "グロース",
+        "titles": [
+          "2026年9月期 第1四半期決算短信〔日本基準〕（連結）",
+          "通期連結業績予想の修正（上方修正）に関するお知らせ",
+          "「上方修正記念」株主優待の実施に関するお知らせ"
+        ],
+        "reasons": [
+          "",
+          "",
+          ""
+        ],
+        "pdf_urls": [
+          "https://www.release.tdnet.info/inbs/140120260206551063.pdf",
+          "https://www.release.tdnet.info/inbs/140120260206551052.pdf",
+          "https://www.release.tdnet.info/inbs/140120260206551051.pdf"
+        ],
+        "ai_evaluations": [
+          "[買い]リネットジャパングループ株式会社は2026年9月期第1四半期において、売上高12.2%増、営業利益286.5%増、親会社株主に帰属する四半期純利益163.7%増と大幅な増収増益を達成しました。特に小型家電リサイクル事業における自治体との連携強化や、リユース事業のネット市場成長への期待が業績を牽引しています。通期業績予想も上方修正されており、今後の成長が期待されます。",
+          "[買い]リネットジャパングループ株式会社が、2026年9月期の連結業績予想を上方修正。売上高は6.7%増、営業利益は30.0%増、経常利益も30.0%増、当期純利益は28.6%増と、大幅な増額となっている。リサイクル事業におけるGIGA端末商戦での確度の高い案件の織り込みや、BtoC回収の売価アップが主な要因。業績改善は株価にとってポジティブな材料となる。",
+          "[買い]リネットジャパングループ株式会社が、通期連結業績予想の上方修正を記念して、株主優待の実施を発表。2026年5月末時点で100株以上保有する株主に対し、デジタルギフト500円分を進呈する。これは株主への感謝の意を示すものであり、株主還元強化の姿勢が評価され、短期的な株価の押し上げ要因となりうる。"
+        ],
+        "content_count": 3,
+        "total_count": 3,
+        "title": "2026年9月期 第1四半期決算短信〔日本基準〕（連結）",
+        "reason": ""
+      }
+    ]
+  },
   "20260206": {
     "date": "2026年02月06日",
     "label": "前営業日",
@@ -14234,7 +14278,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260206';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260209';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
