@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/02/10 00:04:28</p>
+                <p>最終更新: 2026/02/10 09:00:23</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260209" selected>前営業日 2026年02月09日</option>
+                <option value="20260210" selected>最終営業日 2026年02月10日</option>
+                <option value="20260209" >前営業日 2026年02月09日</option>
                 <option value="20260206" >前々営業日 2026年02月06日</option>
             </select>
             
@@ -484,6 +485,31 @@
 
     <script>
         const analysisData = {
+  "20260210": {
+    "date": "2026年02月10日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [
+      {
+        "time": "08:59",
+        "code": "8912",
+        "company": "エリアクエスト",
+        "sentiment": "positive",
+        "score": -2.55,
+        "positive_score": 1.2000000000000002,
+        "negative_score": 3.75,
+        "has_content": true,
+        "market": "スタンダード",
+        "content_count": 1,
+        "total_count": 1,
+        "title": "2026年6月期　第2四半期（中間期）決算短信〔日本基準〕（連結）",
+        "reason": "",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260121536729.pdf",
+        "ai_evaluation": "[買い]株式会社エリアクエストは、2026年6月期第2四半期において、売上高、営業利益、経常利益、親会社株主に帰属する中間純利益の全てで大幅な増加を達成しました。特に経常利益は前年同期比466.6％増、中間純利益は同1,543.9％増と顕著な伸びを示しています。これは不動産市況の好調や同社グループの事業改善努力によるものであり、今後の業績拡大への期待から株価の上昇が見込まれます。"
+      }
+    ],
+    "growth": []
+  },
   "20260209": {
     "date": "2026年02月09日",
     "label": "前営業日",
@@ -15704,7 +15730,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260209';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260210';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
