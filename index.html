@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/02/12 00:05:44</p>
+                <p>最終更新: 2026/02/12 08:34:06</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260210" selected>前営業日 2026年02月10日</option>
+                <option value="20260212" selected>最終営業日 2026年02月12日</option>
+                <option value="20260210" >前営業日 2026年02月10日</option>
                 <option value="20260209" >前々営業日 2026年02月09日</option>
             </select>
             
@@ -484,6 +485,45 @@
 
     <script>
         const analysisData = {
+  "20260212": {
+    "date": "2026年02月12日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [],
+    "growth": [
+      {
+        "time": "08:30",
+        "code": "7806",
+        "company": "Ｇ－ＭＴＧ",
+        "sentiment": "positive",
+        "score": 21.9,
+        "positive_score": 13.2,
+        "negative_score": 7.5,
+        "has_content": true,
+        "market": "グロース",
+        "titles": [
+          "2026年９月期　第１四半期決算短信〔日本基準〕（連結）",
+          "通期業績予想の修正に関するお知らせ"
+        ],
+        "reasons": [
+          "",
+          ""
+        ],
+        "pdf_urls": [
+          "https://www.release.tdnet.info/inbs/140120260210555009.pdf",
+          "https://www.release.tdnet.info/inbs/140120260210555013.pdf"
+        ],
+        "ai_evaluations": [
+          "[買い] 株式会社ＭＴＧは、2026年９月期第１四半期において、売上高45.4％増、親会社株主に帰属する四半期純利益66.1％増と、大幅な増収増益を達成しました。特にダイレクトマーケティング事業では、ホリデーシーズンの需要増や各種イベント、主要ECモールでの販売拡大が寄与し、ReFaブランドを中心に好調な業績を示しています。通期業績予想も上方修正されており、今後の成長が期待できるため、株価の上昇が見込まれます。",
+          "[買い] MTGは2026年9月期通期連結業績予想を上方修正。売上高は6.7%、営業利益は7.7%、経常利益は7.7%、当期純利益は5.6%それぞれ増加する見込み。ReFa、SIXPAD、ReDの売上好調が主な要因。増収とブランド力向上による粗利増が利益を押し上げる。業績上方修正は株価にとってポジティブな材料となる。"
+        ],
+        "content_count": 2,
+        "total_count": 2,
+        "title": "2026年９月期　第１四半期決算短信〔日本基準〕（連結）",
+        "reason": ""
+      }
+    ]
+  },
   "20260210": {
     "date": "2026年02月10日",
     "label": "前営業日",
@@ -16974,7 +17014,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260210';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260212';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
