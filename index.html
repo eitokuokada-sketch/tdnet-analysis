@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/02/25 00:04:22</p>
+                <p>最終更新: 2026/02/25 00:14:38</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260224" selected>前営業日 2026年02月24日</option>
+                <option value="20260225" selected>最終営業日 2026年02月25日</option>
+                <option value="20260224" >前営業日 2026年02月24日</option>
                 <option value="20260220" >前々営業日 2026年02月20日</option>
             </select>
             
@@ -484,6 +485,31 @@
 
     <script>
         const analysisData = {
+  "20260225": {
+    "date": "2026年02月25日",
+    "label": "最終営業日",
+    "prime": [
+      {
+        "time": "00:10",
+        "code": "5401",
+        "company": "日本製鉄",
+        "sentiment": "negative",
+        "score": -3.0,
+        "positive_score": 0.0,
+        "negative_score": 3.0,
+        "has_content": false,
+        "market": "プライム",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "2029年満期ユーロ円建転換社債型新株予約権付社債及び2031年満期ユーロ円建転換社債型新株予約権付社債の発行条件等の決定に関するお知らせ",
+        "reason": "ネガティブ要因: 新株式発行など [合計:-3.0点]",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260224568200.pdf",
+        "ai_evaluation": ""
+      }
+    ],
+    "standard": [],
+    "growth": []
+  },
   "20260224": {
     "date": "2026年02月24日",
     "label": "前営業日",
@@ -6220,7 +6246,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260224';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260225';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
