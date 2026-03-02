@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/03/03 00:05:03</p>
+                <p>最終更新: 2026/03/03 08:33:08</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260302" selected>前営業日 2026年03月02日</option>
+                <option value="20260303" selected>最終営業日 2026年03月03日</option>
+                <option value="20260302" >前営業日 2026年03月02日</option>
                 <option value="20260227" >前々営業日 2026年02月27日</option>
             </select>
             
@@ -484,6 +485,31 @@
 
     <script>
         const analysisData = {
+  "20260303": {
+    "date": "2026年03月03日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [],
+    "growth": [
+      {
+        "time": "08:30",
+        "code": "6081",
+        "company": "Ｇ－アライドアーキ",
+        "sentiment": "neutral",
+        "score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "has_content": false,
+        "market": "グロース",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "定款の一部変更に関するお知らせ",
+        "reason": "中立的な開示",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260302573981.pdf",
+        "ai_evaluation": ""
+      }
+    ]
+  },
   "20260302": {
     "date": "2026年03月02日",
     "label": "前営業日",
@@ -8035,7 +8061,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260302';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260303';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
