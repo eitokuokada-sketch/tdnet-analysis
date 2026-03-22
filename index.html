@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/03/23 00:01:57</p>
+                <p>最終更新: 2026/03/23 08:30:59</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260319" selected>前営業日 2026年03月19日</option>
+                <option value="20260323" selected>最終営業日 2026年03月23日</option>
+                <option value="20260319" >前営業日 2026年03月19日</option>
                 <option value="20260318" >前々営業日 2026年03月18日</option>
             </select>
             
@@ -484,6 +485,31 @@
 
     <script>
         const analysisData = {
+  "20260323": {
+    "date": "2026年03月23日",
+    "label": "最終営業日",
+    "prime": [
+      {
+        "time": "08:30",
+        "code": "4519",
+        "company": "中外薬",
+        "sentiment": "neutral",
+        "score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "has_content": false,
+        "market": "プライム",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "脊髄性筋萎縮症および顔面肩甲上腕型筋ジストロフィーに対するGYM329（emugrobart）の開発中止に関するお知らせ",
+        "reason": "中立的な開示",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260322585975.pdf",
+        "ai_evaluation": ""
+      }
+    ],
+    "standard": [],
+    "growth": []
+  },
   "20260319": {
     "date": "2026年03月19日",
     "label": "前営業日",
@@ -5498,7 +5524,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260319';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260323';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
