@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/05/19 00:03:06</p>
+                <p>最終更新: 2026/05/19 00:35:35</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260518" selected>前営業日 2026年05月18日</option>
+                <option value="20260519" selected>最終営業日 2026年05月19日</option>
+                <option value="20260518" >前営業日 2026年05月18日</option>
                 <option value="20260515" >前々営業日 2026年05月15日</option>
             </select>
             
@@ -484,6 +485,31 @@
 
     <script>
         const analysisData = {
+  "20260519": {
+    "date": "2026年05月19日",
+    "label": "最終営業日",
+    "prime": [
+      {
+        "time": "00:30",
+        "code": "5016",
+        "company": "ＪＸ金属",
+        "sentiment": "negative",
+        "score": -3.0,
+        "positive_score": 0.0,
+        "negative_score": 3.0,
+        "has_content": false,
+        "market": "プライム",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "2029年満期ユーロ円建転換社債型新株予約権付社債及び2031年満期ユーロ円建転換社債型新株予約権付社債の発行条件等の決定に関するお知らせ",
+        "reason": "ネガティブ要因: 新株式発行など [合計:-3.0点]",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260518540256.pdf",
+        "ai_evaluation": ""
+      }
+    ],
+    "standard": [],
+    "growth": []
+  },
   "20260518": {
     "date": "2026年05月18日",
     "label": "前営業日",
@@ -29279,7 +29305,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260518';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260519';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
