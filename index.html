@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/05/21 00:04:54</p>
+                <p>最終更新: 2026/05/21 08:31:27</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260520" selected>前営業日 2026年05月20日</option>
+                <option value="20260521" selected>最終営業日 2026年05月21日</option>
+                <option value="20260520" >前営業日 2026年05月20日</option>
                 <option value="20260519" >前々営業日 2026年05月19日</option>
             </select>
             
@@ -484,6 +485,31 @@
 
     <script>
         const analysisData = {
+  "20260521": {
+    "date": "2026年05月21日",
+    "label": "最終営業日",
+    "prime": [
+      {
+        "time": "08:30",
+        "code": "2337",
+        "company": "いちご",
+        "sentiment": "neutral",
+        "score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "has_content": false,
+        "market": "プライム",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "当社取締役会の実効性に関する評価結果の概要のお知らせ",
+        "reason": "中立的な開示",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260520542517.pdf",
+        "ai_evaluation": ""
+      }
+    ],
+    "standard": [],
+    "growth": []
+  },
   "20260520": {
     "date": "2026年05月20日",
     "label": "前営業日",
@@ -7210,7 +7236,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260520';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260521';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
