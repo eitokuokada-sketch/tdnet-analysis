@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/06/05 00:02:01</p>
+                <p>最終更新: 2026/06/05 08:02:43</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260604" selected>前営業日 2026年06月04日</option>
+                <option value="20260605" selected>最終営業日 2026年06月05日</option>
+                <option value="20260604" >前営業日 2026年06月04日</option>
                 <option value="20260603" >前々営業日 2026年06月03日</option>
             </select>
             
@@ -484,6 +485,31 @@
 
     <script>
         const analysisData = {
+  "20260605": {
+    "date": "2026年06月05日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [],
+    "growth": [
+      {
+        "time": "08:00",
+        "code": "7777",
+        "company": "Ｇ－３Ｄマトリックス",
+        "sentiment": "positive",
+        "score": 9.0,
+        "positive_score": 12.75,
+        "negative_score": 3.75,
+        "has_content": true,
+        "market": "グロース",
+        "content_count": 1,
+        "total_count": 1,
+        "title": "業績予想の修正に関するお知らせ",
+        "reason": "",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260604563496.pdf",
+        "ai_evaluation": "[買い] 株式会社スリー・ディー・マトリックスが2026年4月期の連結業績予想を上方修正。売上高は9.4%増、営業利益は38.9%増、経常利益は18.4%増、親会社株主に帰属する当期純利益は20.9%増となる見込み。特に第4四半期の米国での想定以上の売上成長が寄与。大幅な増額修正は株価にとってポジティブな材料となる。"
+      }
+    ]
+  },
   "20260604": {
     "date": "2026年06月04日",
     "label": "前営業日",
@@ -1948,7 +1974,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260604';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260605';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
