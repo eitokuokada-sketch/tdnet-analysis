@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/06/30 00:01:05</p>
+                <p>最終更新: 2026/06/30 08:05:07</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260629" selected>前営業日 2026年06月29日</option>
+                <option value="20260630" selected>最終営業日 2026年06月30日</option>
+                <option value="20260629" >前営業日 2026年06月29日</option>
                 <option value="20260626" >前々営業日 2026年06月26日</option>
             </select>
             
@@ -484,6 +485,48 @@
 
     <script>
         const analysisData = {
+  "20260630": {
+    "date": "2026年06月30日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [],
+    "growth": [
+      {
+        "time": "08:00",
+        "code": "5592",
+        "company": "Ｇ－くすりの窓口",
+        "sentiment": "positive",
+        "score": 5.25,
+        "positive_score": 5.25,
+        "negative_score": 0.0,
+        "has_content": true,
+        "market": "グロース",
+        "content_count": 1,
+        "total_count": 1,
+        "title": "非上場の親会社等の決算に関するお知らせ",
+        "reason": "ポジティブ要因: 上回るなど, 拡大など [合計:+5.2点]",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260616571928.pdf",
+        "ai_evaluation": "[様子見]親会社である株式会社EPARKの決算概要が示されている。EPARKの当期純利益は82.52億円と好調であり、これは一部投資資産の売却や投資案件の収益化による一時的な要因も含まれる。くすりの窓口はEPARKと重要な契約関係にあるため、親会社の業績は一定の影響を与える可能性があるが、この情報単体では直接的な株価への影響は限定的と判断される。"
+      },
+      {
+        "time": "08:00",
+        "code": "5592",
+        "company": "Ｇ－くすりの窓口",
+        "sentiment": "neutral",
+        "score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "has_content": false,
+        "market": "グロース",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "支配株主等に関する事項について",
+        "reason": "中立的な開示",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260616571936.pdf",
+        "ai_evaluation": ""
+      }
+    ]
+  },
   "20260629": {
     "date": "2026年06月29日",
     "label": "前営業日",
@@ -12439,7 +12482,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260629';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260630';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
