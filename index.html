@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/08/12 00:03:15</p>
+                <p>最終更新: 2026/08/12 08:04:52</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260810" selected>前営業日 2026年08月10日</option>
+                <option value="20260812" selected>最終営業日 2026年08月12日</option>
+                <option value="20260810" >前営業日 2026年08月10日</option>
                 <option value="20260807" >前々営業日 2026年08月07日</option>
             </select>
             
@@ -484,6 +485,31 @@
 
     <script>
         const analysisData = {
+  "20260812": {
+    "date": "2026年08月12日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [],
+    "growth": [
+      {
+        "time": "08:00",
+        "code": "3556",
+        "company": "Ｇ－リネットジャパン",
+        "sentiment": "positive",
+        "score": 2.25,
+        "positive_score": 7.5,
+        "negative_score": 5.25,
+        "has_content": true,
+        "market": "グロース",
+        "content_count": 1,
+        "total_count": 1,
+        "title": "2026年9月期 第3四半期決算短信〔日本基準〕（連結）",
+        "reason": "",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260810516164.pdf",
+        "ai_evaluation": "[買い]リネットジャパングループ株式会社の2026年9月期第3四半期決算は、売上高が前年同期比37.5％増、親会社株主に帰属する四半期純利益が同172.5％増と大幅な増収増益を達成しました。通期業績予想も上方修正されており、特にリユース・リサイクル事業の好調が業績を牽引しています。これは、同社の事業モデルの成長性と収益性の高まりを示唆しており、株価にとってポジティブな材料と言えます。"
+      }
+    ]
+  },
   "20260810": {
     "date": "2026年08月10日",
     "label": "前営業日",
@@ -26060,7 +26086,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260810';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260812';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
