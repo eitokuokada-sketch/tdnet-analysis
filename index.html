@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/08/19 00:01:54</p>
+                <p>最終更新: 2026/08/19 08:02:38</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260818" selected>前営業日 2026年08月18日</option>
+                <option value="20260819" selected>最終営業日 2026年08月19日</option>
+                <option value="20260818" >前営業日 2026年08月18日</option>
                 <option value="20260817" >前々営業日 2026年08月17日</option>
             </select>
             
@@ -484,6 +485,80 @@
 
     <script>
         const analysisData = {
+  "20260819": {
+    "date": "2026年08月19日",
+    "label": "最終営業日",
+    "prime": [
+      {
+        "time": "08:00",
+        "code": "4413",
+        "company": "ボードルア",
+        "sentiment": "neutral",
+        "score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "has_content": false,
+        "market": "プライム",
+        "titles": [
+          "MBOの実施及び応募の推奨に関するお知らせ",
+          "ビーシーピーイー ネオン ケイマン エルピーによる株式会社ボードルア（証券コード：4413）に対する公開買付けの開始に関するお知らせ"
+        ],
+        "reasons": [
+          "中立的な開示",
+          "中立的な開示"
+        ],
+        "pdf_urls": [
+          "https://www.release.tdnet.info/inbs/140120260817521803.pdf",
+          "https://www.release.tdnet.info/inbs/140120260818522642.pdf"
+        ],
+        "ai_evaluations": [
+          "",
+          ""
+        ],
+        "content_count": 0,
+        "total_count": 2,
+        "title": "MBOの実施及び応募の推奨に関するお知らせ",
+        "reason": "中立的な開示"
+      },
+      {
+        "time": "08:00",
+        "code": "4413",
+        "company": "ボードルア",
+        "sentiment": "negative",
+        "score": -29.25,
+        "positive_score": 2.25,
+        "negative_score": 31.5,
+        "has_content": true,
+        "market": "プライム",
+        "content_count": 1,
+        "total_count": 1,
+        "title": "2027年２月期 期末配当予想の修正(無配)のお知らせ",
+        "reason": "",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260818522655.pdf",
+        "ai_evaluation": "[強く売り] 株式会社ボードルアは、MBO（マネジメント・バイアウト）の実施に伴い、2027年2月期の期末配当予想を無配に修正すると発表しました。これは、公開買付者による株式の非公開化を前提としたものであり、上場廃止となる予定です。配当を行わないことは、株主にとって直接的な利益還元がなくなることを意味し、株価にとってはネガティブな要因となります。"
+      }
+    ],
+    "standard": [],
+    "growth": [
+      {
+        "time": "08:00",
+        "code": "186A",
+        "company": "Ｇ－アストロスケール",
+        "sentiment": "neutral",
+        "score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "has_content": false,
+        "market": "グロース",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "執行役員の選任に関するお知らせ",
+        "reason": "中立的な開示",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260817521797.pdf",
+        "ai_evaluation": ""
+      }
+    ]
+  },
   "20260818": {
     "date": "2026年08月18日",
     "label": "前営業日",
@@ -2428,7 +2503,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260818';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260819';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
