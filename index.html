@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/09/14 00:04:01</p>
+                <p>最終更新: 2026/09/14 08:02:45</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260911" selected>前営業日 2026年09月11日</option>
+                <option value="20260914" selected>最終営業日 2026年09月14日</option>
+                <option value="20260911" >前営業日 2026年09月11日</option>
                 <option value="20260910" >前々営業日 2026年09月10日</option>
             </select>
             
@@ -484,6 +485,49 @@
 
     <script>
         const analysisData = {
+  "20260914": {
+    "date": "2026年09月14日",
+    "label": "最終営業日",
+    "prime": [
+      {
+        "time": "08:00",
+        "code": "9502",
+        "company": "中部電力",
+        "sentiment": "negative",
+        "score": -9.0,
+        "positive_score": 0.0,
+        "negative_score": 3.0,
+        "has_content": false,
+        "market": "プライム",
+        "titles": [
+          "浜岡原子力発電所の新規制基準適合性審査における基準地震動策定に係る不適切事案に関する調査報告書の公表（１／３）",
+          "浜岡原子力発電所の新規制基準適合性審査における基準地震動策定に係る不適切事案に関する調査報告書の公表（２／３）",
+          "浜岡原子力発電所の新規制基準適合性審査における基準地震動策定に係る不適切事案に関する調査報告書の公表（３／３）"
+        ],
+        "reasons": [
+          "ネガティブ要因: 地震など [合計:-3.0点]",
+          "ネガティブ要因: 地震など [合計:-3.0点]",
+          "ネガティブ要因: 地震など [合計:-3.0点]"
+        ],
+        "pdf_urls": [
+          "https://www.release.tdnet.info/inbs/140120260911534703.pdf",
+          "https://www.release.tdnet.info/inbs/140120260913535389.pdf",
+          "https://www.release.tdnet.info/inbs/140120260913535390.pdf"
+        ],
+        "ai_evaluations": [
+          "",
+          "",
+          ""
+        ],
+        "content_count": 0,
+        "total_count": 3,
+        "title": "浜岡原子力発電所の新規制基準適合性審査における基準地震動策定に係る不適切事案に関する調査報告書の公表（１／３）",
+        "reason": "ネガティブ要因: 地震など [合計:-3.0点]"
+      }
+    ],
+    "standard": [],
+    "growth": []
+  },
   "20260911": {
     "date": "2026年09月11日",
     "label": "前営業日",
@@ -5530,7 +5574,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260911';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260914';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
