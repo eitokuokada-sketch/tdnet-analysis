@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/10/01 00:00:53</p>
+                <p>最終更新: 2026/10/01 08:02:12</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20260930" selected>前営業日 2026年09月30日</option>
+                <option value="20261001" selected>最終営業日 2026年10月01日</option>
+                <option value="20260930" >前営業日 2026年09月30日</option>
                 <option value="20260929" >前々営業日 2026年09月29日</option>
             </select>
             
@@ -484,6 +485,31 @@
 
     <script>
         const analysisData = {
+  "20261001": {
+    "date": "2026年10月01日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [],
+    "growth": [
+      {
+        "time": "08:00",
+        "code": "290A",
+        "company": "Ｇ－Ｓｙｎｓ",
+        "sentiment": "positive",
+        "score": 1.5,
+        "positive_score": 1.5,
+        "negative_score": 0.0,
+        "has_content": false,
+        "market": "グロース",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "Rocket Lab社との20機の衛星打上げ契約締結に関するお知らせ",
+        "reason": "ポジティブ要因: 資本業務提携など [合計:+1.5点]",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120261001543778.pdf",
+        "ai_evaluation": ""
+      }
+    ]
+  },
   "20260930": {
     "date": "2026年09月30日",
     "label": "前営業日",
@@ -6812,7 +6838,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20260930';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20261001';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
