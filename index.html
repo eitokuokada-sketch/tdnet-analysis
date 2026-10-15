@@ -451,14 +451,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/10/16 00:02:52</p>
+                <p>最終更新: 2026/10/16 08:32:52</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・売買） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20261015" selected>前営業日 2026年10月15日</option>
+                <option value="20261016" selected>最終営業日 2026年10月16日</option>
+                <option value="20261015" >前営業日 2026年10月15日</option>
                 <option value="20261014" >前々営業日 2026年10月14日</option>
             </select>
             
@@ -484,6 +485,48 @@
 
     <script>
         const analysisData = {
+  "20261016": {
+    "date": "2026年10月16日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [],
+    "growth": [
+      {
+        "time": "08:30",
+        "code": "7138",
+        "company": "Ｇ－ＴＯＲＩＣＯ",
+        "sentiment": "neutral",
+        "score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "has_content": false,
+        "market": "グロース",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "イーサリアム（ETH）の追加取得に関するお知らせ",
+        "reason": "中立的な開示",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120261016551952.pdf",
+        "ai_evaluation": ""
+      },
+      {
+        "time": "08:30",
+        "code": "7689",
+        "company": "Ｇ－コパ",
+        "sentiment": "neutral",
+        "score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "has_content": false,
+        "market": "グロース",
+        "content_count": 0,
+        "total_count": 1,
+        "title": "大株主による当社株式の譲渡に関するお知らせ",
+        "reason": "中立的な開示",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120261015551543.pdf",
+        "ai_evaluation": ""
+      }
+    ]
+  },
   "20261015": {
     "date": "2026年10月15日",
     "label": "前営業日",
@@ -8899,7 +8942,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20261015';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20261016';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         
