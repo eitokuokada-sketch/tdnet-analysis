@@ -521,14 +521,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/11/09 00:01:07</p>
+                <p>最終更新: 2026/11/09 07:30:46</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・判定） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20261106" selected>前営業日 2026年11月06日</option>
+                <option value="20261109" selected>最終営業日 2026年11月09日</option>
+                <option value="20261106" >前営業日 2026年11月06日</option>
                 <option value="20261105" >前々営業日 2026年11月05日</option>
             </select>
 
@@ -564,6 +565,31 @@
 
     <script>
         const analysisData = {
+  "20261109": {
+    "date": "2026年11月09日",
+    "label": "最終営業日",
+    "prime": [
+      {
+        "time": "07:30",
+        "code": "2181",
+        "company": "パーソルホールディングス",
+        "sentiment": "neutral",
+        "score": 0.0,
+        "positive_score": 0.0,
+        "negative_score": 0.0,
+        "has_content": true,
+        "market": "プライム",
+        "content_count": 1,
+        "total_count": 1,
+        "title": "通期連結業績予想の修正に関するお知らせ",
+        "reason": "スコア判定: 中立的な開示",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120261106567451.pdf",
+        "ai_evaluation": ""
+      }
+    ],
+    "standard": [],
+    "growth": []
+  },
   "20261106": {
     "date": "2026年11月06日",
     "label": "前営業日",
@@ -13911,7 +13937,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20261106';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20261109';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         const validSentiments = ['positive', 'neutral', 'negative'];
