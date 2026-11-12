@@ -521,14 +521,15 @@
         <div class="header">
             <h1>📊 TDnet AI適時開示ラボ</h1>
             <div class="update-info">
-                <p>最終更新: 2026/11/13 00:01:56</p>
+                <p>最終更新: 2026/11/13 08:02:07</p>
             </div>
         </div>
 
         <!-- コントロール（日付・市場区分・判定） -->
         <div class="controls-container">
             <select class="date-select" id="dateSelect">
-                <option value="20261112" selected>前営業日 2026年11月12日</option>
+                <option value="20261113" selected>最終営業日 2026年11月13日</option>
+                <option value="20261112" >前営業日 2026年11月12日</option>
                 <option value="20261111" >前々営業日 2026年11月11日</option>
             </select>
 
@@ -564,6 +565,122 @@
 
     <script>
         const analysisData = {
+  "20261113": {
+    "date": "2026年11月13日",
+    "label": "最終営業日",
+    "prime": [],
+    "standard": [],
+    "growth": [
+      {
+        "time": "08:00",
+        "code": "3556",
+        "company": "リネットジャパングループ",
+        "sentiment": "positive",
+        "score": -0.75,
+        "positive_score": 4.5,
+        "negative_score": 5.25,
+        "has_content": true,
+        "market": "グロース",
+        "content_count": 1,
+        "total_count": 1,
+        "title": "2026年9月期 決算短信〔日本基準〕（連結）",
+        "reason": "AI最終判定: 買い [スコア:+4.5/-5.2点]",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120261112576374.pdf",
+        "ai_evaluation": "[買い]\n2026年9月期は売上高46.2%増、営業利益452.7%増と大幅な増収増益を達成しました。これは会社計画を大きく上回る実績であり、特に利益率の改善が顕著です。2027年9月期予想も増収増益を見込んでおり、配当も12円に増配予定です。株主価値向上に繋がる好材料が多く、短期的な株価上昇が期待できます。"
+      },
+      {
+        "time": "08:00",
+        "code": "3556",
+        "company": "リネットジャパングループ",
+        "sentiment": "neutral",
+        "score": 6.350000000000001,
+        "positive_score": 6.9,
+        "negative_score": 34.5,
+        "has_content": true,
+        "market": "グロース",
+        "titles": [
+          "通期連結業績予想と実績値との差異及び個別決算における前事業年度の実績値との差異に関するお知らせ",
+          "事業計画及び成長可能性に関する事項",
+          "2027年9月期配当予想（初配）及び株主優待制度の変更に関するお知らせ",
+          "定款一部変更に関するお知らせ",
+          "役員人事に関するお知らせ"
+        ],
+        "reasons": [
+          "AI最終判定: 様子見 [スコア:+6.9/-34.5点]",
+          "スコア判定: 中立的な開示 [+0.5/-0.0点]",
+          "AI最終判定: 様子見 [スコア:+37.2/-3.8点]",
+          "スコア判定: 中立的な開示",
+          "スコア判定: 中立的な開示"
+        ],
+        "pdf_urls": [
+          "https://www.release.tdnet.info/inbs/140120261112576474.pdf",
+          "https://www.release.tdnet.info/inbs/140120261112576503.pdf",
+          "https://www.release.tdnet.info/inbs/140120261112576528.pdf",
+          "https://www.release.tdnet.info/inbs/140120261112576538.pdf",
+          "https://www.release.tdnet.info/inbs/140120261112576547.pdf"
+        ],
+        "ai_evaluations": [
+          "[様子見]連結業績予想に対し、売上高は967百万円（-5.97%）下回ったものの、営業利益は3百万円（+0.23%）上回った。しかし、特別費用計上等により経常利益は509百万円（-29.98%）、純利益は372百万円（-31.06%）と大幅に未達となった。個別業績では大幅増収増益だが、連結での利益未達は懸念材料。",
+          "",
+          "[様子見] 創業以来初の配当実施と株主優待制度の変更は、株主還元強化の姿勢を示唆するポジティブ材料である。しかし、配当予想は初年度であり、株主優待も保有期間が短い場合は減額となるため、株価への短期的な影響は限定的と判断。今後の業績見通しや配当方針の継続性に注目が必要。",
+          "",
+          ""
+        ],
+        "content_count": 2,
+        "total_count": 5,
+        "title": "通期連結業績予想と実績値との差異及び個別決算における前事業年度の実績値との差異に関するお知らせ",
+        "reason": "AI最終判定: 様子見 [スコア:+6.9/-34.5点]"
+      },
+      {
+        "time": "08:00",
+        "code": "5137",
+        "company": "スマートドライブ",
+        "sentiment": "neutral",
+        "score": -25.5,
+        "positive_score": 0.0,
+        "negative_score": 27.0,
+        "has_content": true,
+        "market": "グロース",
+        "titles": [
+          "特別損失の計上に関するお知らせ",
+          "2026年９月期決算短信〔日本基準〕(連結)"
+        ],
+        "reasons": [
+          "AI最終判定: 様子見 [スコア:+0.0/-27.0点]",
+          "スコア判定: 中立的な開示 [+9.0/-7.5点]"
+        ],
+        "pdf_urls": [
+          "https://www.release.tdnet.info/inbs/140120261112575498.pdf",
+          "https://www.release.tdnet.info/inbs/140120261111574294.pdf"
+        ],
+        "ai_evaluations": [
+          "[様子見]通信量の増加に伴う通信費の精算で、40百万円の特別損失を計上。原因特定と再発防止策は実施済みだが、最終的な精算条件は協議中。業績への影響は決算短信に反映済みだが、今後の合意内容次第で追加開示の可能性があり、不透明感が残るため様子見とする。",
+          ""
+        ],
+        "content_count": 2,
+        "total_count": 2,
+        "title": "特別損失の計上に関するお知らせ",
+        "reason": "AI最終判定: 様子見 [スコア:+0.0/-27.0点]"
+      },
+      {
+        "time": "08:00",
+        "code": "5137",
+        "company": "スマートドライブ",
+        "sentiment": "positive",
+        "score": 53.25,
+        "positive_score": 53.25,
+        "negative_score": 0.0,
+        "has_content": true,
+        "market": "グロース",
+        "content_count": 1,
+        "total_count": 1,
+        "title": "自己株式取得に係る事項の決定に関するお知らせ",
+        "reason": "AI最終判定: 買い [スコア:+53.2/-0.0点]",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120261111574316.pdf",
+        "ai_evaluation": "[買い] 発行済株式総数（自己株式を除く）の1.1%に相当する400,000株、上限100百万円の自己株式取得を決議。株主還元充実と資本効率向上を目的としており、株価へのポジティブな影響が期待できる。取得期間は2026年11月16日から2027年2月12日まで。"
+      }
+    ]
+  },
   "20261112": {
     "date": "2026年11月12日",
     "label": "前営業日",
@@ -21594,7 +21711,7 @@
 };
         
         // localStorageから状態を復元
-        let currentDate = localStorage.getItem('tdnet_currentDate') || '20261112';
+        let currentDate = localStorage.getItem('tdnet_currentDate') || '20261113';
         let currentSentiment = localStorage.getItem('tdnet_currentSentiment') || 'positive';
         let currentMarket = localStorage.getItem('tdnet_currentMarket') || 'prime';
         const validSentiments = ['positive', 'neutral', 'negative'];
